@@ -11,3 +11,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.background-left {
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.background-right {
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.background-body {
+  background: 'EDF5E1';
+}
+
+.create-post {
+  max-width: 420px;
+  width: 420px;
+  height: 30px;
+  background: #f0f2f5;
+  margin-top: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  filter: brightness(1);
+}
+
+.create-post:hover {
+  filter: brightness(0.8);
+}

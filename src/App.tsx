@@ -1,26 +1,17 @@
+import { Row, Col } from 'antd';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Blog from './components/Blog';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Row className='App'>
+      <Col className='background-left' span={6} />
+      <Col span={12} className='background-body'>
+        <Blog />
+      </Col>
+      <Col className='background-right' span={6} />
+    </Row>
   );
-}
+};
 
 export default App;
