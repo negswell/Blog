@@ -35,9 +35,7 @@ const PostForm: React.FC<IProps> = ({
     setLoading(true);
 
     if (action === 'update' && post) {
-      console.log(post);
-
-      updatePost(post.id, values.body, values.title)
+      updatePost(post.id, values.title, values.body)
         .then(async () => {
           setDataLoading(true);
           notification['success']({
@@ -55,21 +53,22 @@ const PostForm: React.FC<IProps> = ({
           }
 
           setDataLoading(false);
+          setLoading(false);
           setModalVisile(false);
         })
-        .catch((error) =>
+        .catch((error) => {
           notification['error']({
             message: 'Error',
             description: `${error}`,
-          })
-        )
-        .finally(() => setLoading(false));
+          });
+          setLoading(false);
+        });
     } else {
       createPost(values.title, values.body)
         .then(async () => {
           setDataLoading(true);
           notification['success']({
-            message: 'Successfully Updated Post.',
+            message: 'Successfully Created Post.',
           });
 
           try {
@@ -83,15 +82,16 @@ const PostForm: React.FC<IProps> = ({
           }
 
           setDataLoading(false);
+          setLoading(false);
           setModalVisile(false);
         })
-        .catch((error) =>
+        .catch((error) => {
           notification['error']({
             message: 'Error',
             description: `${error}`,
-          })
-        )
-        .finally(() => setLoading(false));
+          });
+          setLoading(false);
+        });
     }
   };
 
