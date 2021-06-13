@@ -1,5 +1,4 @@
-const basePath = 'https://finer-pangolin-17.hasura.app/v1/graphql';
-const secretKey =
-  'mkh6wmCwsGNmQkgXc6rBayCo9tKgM7yGvlt75iJpPFWHgeH7NuRq4lDukmPP7SzD';
+const basePath: any = process.env.REACT_APP_GRAPHQL_URL;
+const secretKey: any = process.env.REACT_APP_HASURA_KEY;
 
 export { basePath, secretKey };
