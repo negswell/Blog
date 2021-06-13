@@ -54,8 +54,8 @@ code {
 }
 
 .create-post {
+  width: 320px;
   max-width: 420px;
-  width: 420px;
   height: 30px;
   background: #f0f2f5;
   margin-top: 16px;
@@ -69,4 +69,36 @@ code {
 
 .create-post:hover {
   filter: brightness(0.8);
+}
+
+.ant-list {
+  width: 100%;
+}
+
+.post {
+  border-top-right-radius: '8px';
+  border-top-left-radius: '16px';
+  border-bottom-right-radius: '8px';
+  border-width: '1px';
+  border-style: 'solid';
+  border-color: 'lightgrey';
+  margin-top: '16px';
+  padding: '16px';
+  display: 'flex';
+  justify-content: 'space-between';
+}
+
+.ant-btn-icon {
+  font-size: 10px;
+}
+
+.App {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+.App::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
 }
