@@ -1,7 +1,9 @@
-import { Row, Col } from 'antd';
 import React from 'react';
+import { Row, Col } from 'antd';
+
 import Blog from './components/Blog';
 
+/** App */
 const App: React.FC = () => {
   return (
     <Row className='App'>

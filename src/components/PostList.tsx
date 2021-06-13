@@ -8,6 +8,7 @@ import deletePost from '../utils/deletePost';
 import getPosts from '../utils/getPosts';
 import PostForm from './PostForm';
 
+/** Props for Post List */
 interface IProps {
   data: IPost[];
   dataLoading: boolean;
@@ -15,6 +16,7 @@ interface IProps {
   setDataLoading: (dataLoading: boolean) => void;
 }
 
+/**  PostList component */
 const PostList: React.FC<IProps> = ({
   data,
   dataLoading,
@@ -24,15 +26,17 @@ const PostList: React.FC<IProps> = ({
   const [modalVisible, setModalVisible] = React.useState(false);
   const [post, setPost] = React.useState<IPost>();
 
+  /** handle edit/update post */
   const handleEdit = (post: IPost) => {
-    setModalVisible(true);
     setPost({
       id: post.id,
       title: decodeURIComponent(post.title),
       body: decodeURIComponent(post.body),
     });
+    setModalVisible(true);
   };
 
+  /** handle delete post */
   const handleDelete = (post: IPost) => {
     Modal.confirm({
       title: 'Do you Want to delete this post ?',

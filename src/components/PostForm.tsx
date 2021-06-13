@@ -5,6 +5,7 @@ import createPost from '../utils/createPost';
 import getPosts from '../utils/getPosts';
 import updatePost from '../utils/updatePost';
 
+/** Props for Post add/update Form */
 interface IProps {
   modalVisible: boolean;
   post?: IPost;
@@ -14,6 +15,7 @@ interface IProps {
   setDataLoading: (loading: boolean) => void;
 }
 
+/** PostForm Component */
 const PostForm: React.FC<IProps> = ({
   post,
   modalVisible,
@@ -25,16 +27,19 @@ const PostForm: React.FC<IProps> = ({
   const [loading, setLoading] = React.useState<boolean>(false);
   const [form] = Form.useForm();
 
+  /** Set form values for editing when action is update */
   React.useEffect(() => {
     if (post) {
       form.setFieldsValue(post);
     }
   }, [post]);
 
+  /** handle form submit */
   const handleFinish = (values: ICreatePostForm) => {
     setLoading(true);
 
     if (action === 'update' && post) {
+      /** call update apiand then call get posts api again to get updated post list */
       updatePost(post.id, values.title, values.body)
         .then(async () => {
           setDataLoading(true);
@@ -64,6 +69,7 @@ const PostForm: React.FC<IProps> = ({
           setLoading(false);
         });
     } else {
+      /** call create api and then call get posts api again to get updated post list */
       createPost(values.title, values.body)
         .then(async () => {
           setDataLoading(true);

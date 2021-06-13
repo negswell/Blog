@@ -102,3 +102,15 @@ code {
   width: 0;
   height: 0;
 }
+
+.blog {
+  width: 100%;
+  position: 'sticky';
+  top: 0;
+  height: '70px';
+  z-index: 1;
+  background: 'white';
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+}

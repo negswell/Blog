@@ -1,3 +1,4 @@
+/** IPost type */
 type IPost = {
   id: string;
   title: string;

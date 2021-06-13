@@ -1,5 +1,6 @@
 import { basePath, secretKey } from './constants';
 
+/** delete post api */
 const deletePost = async (id: string) => {
   const response = await fetch(basePath, {
     method: 'POST',

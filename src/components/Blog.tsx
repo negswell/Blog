@@ -1,16 +1,19 @@
 import React from 'react';
+
 import getPosts from '../utils/getPosts';
 import CreatePost from './CreatePost';
 import PostList from './PostList';
 
+/** Blog Component */
 const Blog: React.FC = () => {
   const [data, setData] = React.useState<IPost[]>([]);
   const [dataLoading, setDataLoading] = React.useState<boolean>(true);
 
+  /** Get Posts on mount */
   React.useEffect(() => {
     getPosts()
-      .then((post) => {
-        setData(post);
+      .then((posts) => {
+        setData(posts);
       })
       .finally(() => setDataLoading(false));
   }, []);

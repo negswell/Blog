@@ -1,5 +1,6 @@
 import { basePath, secretKey } from './constants';
 
+/** get post api */
 const getPosts = async () => {
   const response = await fetch(basePath, {
     method: 'POST',

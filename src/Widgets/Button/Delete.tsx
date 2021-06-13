@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Tooltip } from 'antd';
 import { DeleteFilled } from '@ant-design/icons';
 
+/** Delete Props */
 interface IProps {
   title: string;
   onClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
