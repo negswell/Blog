@@ -45,6 +45,7 @@ const PostForm: React.FC<IProps> = ({
           setDataLoading(true);
           notification['success']({
             message: 'Successfully Updated Post.',
+            duration: 2,
           });
 
           try {
@@ -75,6 +76,7 @@ const PostForm: React.FC<IProps> = ({
           setDataLoading(true);
           notification['success']({
             message: 'Successfully Created Post.',
+            duration: 2,
           });
 
           try {
@@ -103,8 +105,8 @@ const PostForm: React.FC<IProps> = ({
 
   return (
     <Modal
-      title='Update Post'
-      okText='Update'
+      title={action === 'update' ? 'Update Post' : 'Create Post'}
+      okText={action === 'update' ? 'Update' : 'Create'}
       destroyOnClose={true}
       visible={modalVisible}
       confirmLoading={loading}
